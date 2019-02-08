@@ -1,0 +1,31 @@
+{
+    "name": "ts-webdev-starter",
+    "version": "0.0.1",
+    "description": "This is a simple boilerplate for Web Development using Typescript",
+    "author": "Nathaniel Riehl",
+    "license": "MIT",
+    "scripts": {
+        "prestart": "ts-node utils/build/startMessage.ts",
+        "start": "ts-node utils/devServer.ts",
+        "build": "ts-node utils/prodServer.ts"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/BlauDrachen/ts-webdev-starter.git"
+    },
+    "bugs": {
+        "url": "https://github.com/BlauDrachen/ts-webdev-starter/issues"
+    },
+    "homepage": "https://github.com/BlauDrachen/ts-webdev-starter",
+    "dependencies": {
+        "whatwg-fetch": "^3.0.0"
+    },
+    "devDependencies": {
+        "@types/express": "^4.16.1",
+        "@types/node": "^10.12.23",
+        "chalk": "^2.4.2",
+        "express": "^4.16.4",
+        "ts-node": "^8.0.2",
+        "typescript": "^3.3.1"
+    }
+}

@@ -1,0 +1,44 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended",
+        "tslint-eslint-rules"
+    ],
+    "jsRules": {
+        "no-console": {
+            "severity": "warning",
+            "options": [
+                "debug",
+                "info",
+                "log",
+                "time",
+                "timeEnd",
+                "trace"
+            ]
+        },
+        "object-literal-sort-keys": { "severity": "warning" },
+        "quotemark": false,
+        "whitespace": { "severity": "warning" },
+        "trailing-comma": { "severity": "warning" }
+    },
+    "rules": {
+        "no-console": {
+            "severity": "warning",
+            "options": [
+                "debug",
+                "info",
+                "log",
+                "time",
+                "timeEnd",
+                "trace"
+            ]
+        },
+        "object-literal-sort-keys": { "severity": "warning" },
+        "quotemark": {
+            "severity": "warning",
+            "options": [true, "double", "avoid-escape"]
+        },
+        "trailing-comma": { "severity": "warning" }
+    },
+    "rulesDirectory": []
+}

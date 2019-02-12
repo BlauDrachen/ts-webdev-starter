@@ -3,39 +3,37 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
-  mode: 'development',
   devtool: 'inline-source-map',
   entry: [
     path.resolve(__dirname, 'src/index')
   ],
+  mode: 'development',
   module: {
     rules: [
-      {
-        test: /\.tsx?$/,
-        use: 'awesome-typescript-loader',
-        exclude: /node_modules/
-      }
+      {test: /\.[jt]sx?$/, exclude: /node_modules/, use: 'awesome-typescript-loader'},
+      {test: /\.css$/, use: ['style-loader', 'css-loader']}
     ]
   },
-  resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ]
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'src'),
+    publicPath: '/'
   },
   plugins: [
     new webpack.LoaderOptionsPlugin({
-      minimize: false,
       debug: true,
+      minimize: false,
       noInfo: true // set to false to see a list of every file being bundled.
     }),
+
     // Create HTML file that includes reference to bundled JS.
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
-      inject: true
+      inject: true,
+      template: 'src/index.html'
     })
   ],
-  target: 'web',
-  output: {
-    path: path.resolve(__dirname, 'src'),
-    publicPath: '/',
-    filename: 'bundle.js'
-  }
+  resolve: {
+    extensions: ['*', '.js', '.jsx', '.json', '.ts', '.tsx']
+  },
+  target: 'web'
 };

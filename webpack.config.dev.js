@@ -11,7 +11,7 @@ export default {
   module: {
     rules: [
       {test: /\.[jt]sx?$/, exclude: /node_modules/, use: 'awesome-typescript-loader'},
-      {test: /\.css$/, use: ['style-loader', 'css-loader']}
+      {test: /\.(sa|sc|c)ss$/, use: ['style-loader', 'css-loader', 'sass-loader']}
     ]
   },
   output: {

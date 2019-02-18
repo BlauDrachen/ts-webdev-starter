@@ -20,7 +20,7 @@ export default {
   module: {
     rules: [
       {test: /\.[jt]sx?$/, exclude: /node_modules/, use: 'awesome-typescript-loader'},
-      {test: /\.css$/, use: [MiniCssExtractPlugin.loader, 'css-loader']}
+      {test: /\.(sa|sc|c)ss$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']}
     ]
   },
 

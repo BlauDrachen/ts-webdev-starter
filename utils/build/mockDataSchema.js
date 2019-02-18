@@ -6,14 +6,16 @@ export const schema = {
     "users": {
       "type": "array",
       "minItems": 3,
-      "maxItems": 5,
+      "maxItems": 9,
       "items": {
         "type": "object",
         "properties": {
           "id": {
-            "type": "number",
-            "unique": true,
-            "minimum": 1
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 29,
+            "exclusiveMinimum": true,
+            "unique": true
           },
           "firstName": {
             "type": "string",
@@ -25,6 +27,7 @@ export const schema = {
           },
           "email": {
             "type": "string",
+            "format": "email",
             "faker": "internet.email"
           }
         },

@@ -1,7 +1,17 @@
-$body-color: blue;
+$body-color: darkslategray;
 
-.testclass {
+h1 {
   color: $body-color;
+}
+
+table {
+  border: 1px solid black;
+}
+
+tr {
+  td {
+    border: 1px solid black;
+  }
 }
 
 body {

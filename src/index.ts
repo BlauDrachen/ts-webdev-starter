@@ -1,5 +1,9 @@
+import * as OfflinePluginRuntime from "offline-plugin/runtime";
 import {getUsers} from "./api/exampleApi";
 import "./scss/index.scss";
+
+// Setup Offline Plugin
+OfflinePluginRuntime.install();
 
 // Populate table of users via API call.
 getUsers().then((result) => {

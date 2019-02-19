@@ -7,7 +7,7 @@
   "scripts": {
     "prestart": "ts-node utils/build/startMessage.ts",
     "start": "npm-run-all --parallel dev:server lint:watch test:watch mockapi:start",
-    "dev:server": "ts-node utils/build/devServer.js",
+    "dev:server": "ts-node utils/build/devServer.ts",
     "lint": "npm-run-all lint:scripts lint:styles",
     "lint:watch": "npm-run-all --parallel lint:scriptswatch lint:styleswatch",
     "lint:scripts": "tslint -c tslint.json -t verbose webpack.config.* src/**/*.[tj]s utils/**/*.[tj]s",
@@ -22,8 +22,8 @@
     "mockapi:start": "json-server --watch src/api/db.json --port 3001",
     "clean:dist": "rimraf ./dist && mkdir dist",
     "prebuild": "npm-run-all clean:dist test lint",
-    "build": "ts-node utils/build/build.js",
-    "postbuild": "ts-node utils/build/prodServer.js"
+    "build": "ts-node utils/build/build.ts",
+    "postbuild": "ts-node utils/build/prodServer.ts"
   },
   "repository": {
     "type": "git",

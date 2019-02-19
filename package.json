@@ -17,7 +17,7 @@
     "lint:styles-find-rules": "stylelint-find-rules",
     "test": "mocha --require ts-node/register --reporter nyan \"src/**/*.test.{js,ts}\"",
     "test:watch": "npm run test -- --watch --watch-extensions js,ts",
-    "mockapi:generate": "ts-node utils/build/genMockData.js",
+    "mockapi:generate": "ts-node utils/build/genMockData.ts",
     "premockapi:start": "npm run mockapi:generate",
     "mockapi:start": "json-server --watch src/api/db.json --port 3001",
     "clean:dist": "rimraf ./dist && mkdir dist",
@@ -34,6 +34,8 @@
   },
   "homepage": "https://github.com/BlauDrachen/ts-webdev-starter",
   "dependencies": {
+    "chance": "^1.0.18",
+    "faker": "^4.1.0",
     "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {

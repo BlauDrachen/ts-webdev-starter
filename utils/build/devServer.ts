@@ -14,6 +14,7 @@ const app = express();
 const compiler = webpack(config);
 
 // Use webpack during development
+app.use("/favicon.ico", express.static("images/favicon.ico"));
 app.use(webpackDevMiddleware(compiler, {
     noInfo: true,
     publicPath: config.output.publicPath

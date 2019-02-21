@@ -1,5 +1,5 @@
 import "whatwg-fetch";
-const baseUrl = "http://localhost:3001/";
+const baseUrl = "/";
 
 export function getUsers() {
   return get("users");

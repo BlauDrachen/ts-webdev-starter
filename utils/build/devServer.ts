@@ -24,6 +24,10 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../src/index.html"));
 });
 
+app.get("/users", (req, res) => {
+  res.status(301).redirect("http://localhost:3001/users");
+});
+
 // Run server on specified port
 app.listen(port, (err) => {
     if (err) {

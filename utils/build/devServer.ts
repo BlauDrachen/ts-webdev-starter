@@ -5,7 +5,6 @@ import webpackDevMiddleware from "webpack-dev-middleware";
 import config from "../../webpack.config.dev";
 
 // tslint:disable:no-console
-
 // Initialize objects
 const port = 3000;
 const app = express();

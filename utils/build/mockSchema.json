@@ -1,11 +1,9 @@
-// tslint:disable:object-literal-sort-keys
-
-export const schema = {
+{
   "type": "object",
   "properties": {
     "users": {
       "type": "array",
-      "minItems": 3,
+      "minItems": 5,
       "maxItems": 9,
       "items": {
         "type": "object",
@@ -14,7 +12,6 @@ export const schema = {
             "type": "integer",
             "minimum": 1,
             "maximum": 29,
-            "exclusiveMinimum": true,
             "unique": true
           },
           "firstName": {
@@ -36,4 +33,4 @@ export const schema = {
     }
   },
   "required": ["users"]
-};
+}

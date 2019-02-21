@@ -19,8 +19,10 @@ export default {
 
   module: {
     rules: [
-      {test: /\.[jt]sx?$/, exclude: /node_modules/, use: 'awesome-typescript-loader'},
-      {test: /\.(sa|sc|c)ss$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']}
+      {test: /\.[jt]sx?$/, exclude: /node_modules/, use: 'awesome-typescript-loader'}, // scripts
+      {test: /\.(sa|sc|c)ss$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']}, // stylesheets
+      {test: /\.(jpe?g|png|gif|svg|ico)$/, use: 'file-loader?name=[name].[ext]'}, // Query string retains original name
+      {test: /\.(woff2?|eot|ttf|otf)$/, use: 'file-loader'} // Fonts
     ]
   },
 
@@ -89,7 +91,8 @@ export default {
         removeStyleLinkTypeAttributes: true,
         useShortDoctype: true
       },
-      template: 'src/index.html'
+      template: 'src/index.html',
+      favicon: 'src/images/favicon.ico'
     }),
 
     // Eliminate duplicate packages when generating bundle

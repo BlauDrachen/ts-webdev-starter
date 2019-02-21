@@ -5,10 +5,12 @@ import config from "../../webpack.config.prod";
 
 console.log(chalk.blue("Generating minified bundle for production. This will take a moment..."));
 
+// TODO: remove ts-ignore and ensure object typing is correct
+// @ts-ignore
 webpack(config).run((err, stats) => {
   // If a fatal error occurs stop at this point.
   if (err) {
-    console.log(chalk.red(err));
+    console.log(chalk.red(`${err}`));
     return 1;
   }
 
@@ -17,13 +19,13 @@ webpack(config).run((err, stats) => {
 
   // Check for Errors
   if (jsonStats.hasErrors) {
-    return jsonStats.errors.map(error => console.log(chalk.red(error)));
+    return jsonStats.errors.map((error) => console.log(chalk.red(error)));
   }
 
   // Check for warnings
   if (jsonStats.hasWarnings) {
     console.log(chalk.yellow("Webpack generated the following warnings: "));
-    jsonStats.warnings.map(warning => console.log(chalk.yellow(warning)));
+    jsonStats.warnings.map((warning) => console.log(chalk.yellow(warning)));
   }
 
   // Output the remainder of the output
